@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body.dark-theme {
+    --color-header: #191e2b;
+    --color-background: #30343f;
+    --color-text: #ffffff;
+    --border-radius: 3px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text);
+    overflow: hidden;
+}
+body {
+    height: 100vh;
+    margin: 0;
+}
+header {
+    background-color: var(--color-header);
+}
+.app-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 10px;
+    letter-spacing: -1px;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+.panel-buttons {
+    justify-content: center;
+}
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+.buttons-container .button:first-child {
+    margin-left: 0;
+}
+.buttons-container .button {
+    margin: 2.5px;
+}
+.button {
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    cursor: pointer;
+}
+button {
+    border: 0;
+    color: var(--color-text);
+    background-color: transparent;
+    display: block;
+    outline: 0;
+}
+.button-icon-text {
+    margin-right: 5px;
+    display: block;
+}
+/* Fin header */
+/* Comienzo main  */
+.editor-container {
+    display: flex;
+    flex-grow: 1;
+}
+.meme-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background);
+    padding: 0 20px;
+}
+.canvas-meme {
+    width: 100%;
+    max-width: 610px;
+    height: 610px;
+    background-color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+#top-text {
+    top: 0;
+}
+#image-meme {
+    width: 100%;
+    flex-grow: 1;
+    background-size: cover;
+}
+#bottom-text {
+    bottom: 0;
+}
+.text-meme {
+    width: 100%;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 35px 50px;
+    font-size: 40px;
+    font-weight: 800;
+}
+p {
+    margin: 0;
+}
+#download-meme-button {
+    margin-top: 30px;
+    padding: 15px 15px;
+    height: auto;
+    background-color: #2e7d32;
+    color: white;
+}

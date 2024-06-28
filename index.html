@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Editor de memes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <!-- Comienzo header -->
+    <header>
+        <h1 class="app-title">Generador de Memes</h1>
+        <div class="buttons-container panel-buttons">
+            <button class="button button-text" id="panel-img-button">
+                <i class="fa-solid fa-image"></i>Imagen
+            </button>
+            <button class="button button-text" id="panel-text-button">
+                <i class="fa-solid fa-font"></i>Text
+            </button>
+            <button class="button button-text button-theme button-theme-dark" id="dark-theme-button" aria-label="Cambiar a modo oscuro">
+                <i class="fa-solid fa-lightbulb"></i>Modo Oscuro
+            </button>
+            <button class="button button-text button-theme button-theme-light" id="light-theme-button" aria-label="Cambiar a modo claro">
+                <i class="fa-solid fa-lightbulb"></i>Modo Claro
+            </button>
+        </div>
+    </header>
+    <!-- Fin header -->
+    <!-- Comienzo el main -->
+    <div class="editor-container">
+        <main class="meme-container">
+            <div class="canvas-meme" id="canvas-meme">
+                <p id="top-text" class="text-meme">TOP TEXT</p>
+                <div src="" alt="" id="image-meme" aria-label="Imagen de meme"></div>
+                <p id="bottom-text" class="text-meme">BOTTOM TEXT</p>
+            </div>
+            <button type="button" class="button button-text" id="download-meme-button"><i class="fas fa-download button-icon-text"
+                aria-hidden="true"></i>Descargar meme</button>
+
+        </main>
+        <aside>
+
+        </aside>
+
+    </div>
+</body>
+</html>
