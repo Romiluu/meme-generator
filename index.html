@@ -57,6 +57,26 @@
                     <h3 class="panel-control-title">URL</h3>
                     <input type="text" class="panel-control-input" id="url-img-input" aria-label="URL de imagen">
                 </div>
+                <!-- Panel de imagen fondo -->
+                <div class="panel-control">
+                    <h3 class="panel-control-title">FONDO</h3>
+                    <div class="panel-control-columns">
+                      <div class="panel-control-color panel-control-column">
+                        <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#FFFFFF" aria-label="Color de fondo de imagen">
+                        <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                      </div>
+                      <div class="panel-control-column">
+                        <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
+                          <option value="unset">Ninguno</option>
+                          <option value="lighten">Aclarar</option>
+                          <option value="darken">Oscurecer</option>
+                          <option value="difference">Diferencia</option>
+                          <option value="luminosity">Luminosidad</option>
+                          <option value="multiply">Multiplicar</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
         </aside>
 
     </div>
