@@ -65,7 +65,7 @@ h1 {
     font-size: 14px;
     cursor: pointer;
 }
-input, button, select { /* ya uso input , botton y select */
+input, button, select{ /* ya uso input , botton y select */
     border: 0;
     color: var(--color-text);
     background-color: transparent;
@@ -156,7 +156,7 @@ p {
     border-radius: 3px;
     cursor: pointer;
 }
-/* aca arranco con el panel de imagen, url para link */
+/* aca arranco con el panel de imagen */
 .panel-title {
     /* color: var(--color-title-panel); este cambia en modo claro */
     margin-top: 0;
