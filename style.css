@@ -81,7 +81,7 @@ h1 {
     font-size: 14px;
     cursor: pointer;
 }
-input, button, select, textarea { /* ya uso input , botton y select */
+input, button, select, textarea {
     border: 0;
     color: var(--color-text);
     /* font-family: var(--font-primary); */
@@ -305,4 +305,23 @@ input[type='range']::-webkit-slider-thumb {
 }
 .button-default {
     background-color: var(--color-boton-default);
+}
+/* FIN Panel de imagen, FILTROS */
+
+/* PANEL DE TEXTO, superior e inferior */
+
+.oculto { /* va a ocultar o mostrar paneles*/
+    display: none;
+  }
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+}
+.panel-control-checkbox {
+    margin-top: 10px;
+    font-size: 12px;
+}
+input[type='checkbox'] {
+    margin: 0 5px 0 0;
 }

@@ -54,8 +54,41 @@ const reestrablecerFiltros = () => {
 
   actualizarFiltros()
 }
+//Funciones para los paneles.
+const ocultarPanel = () => {
+  $('panel').classList.add('oculto')
+}
 
-//Este es el inicializador de evento 
+const mostrarPanel = () => {
+  $('panel').classList.remove('oculto')
+}
+
+const mostrarPanelImagen = () => {
+  $(`panel-text`).classList.add('oculto')
+  $(`panel-img`).classList.remove('oculto')
+}
+
+const mostrarPanelTexto = () => {
+  $(`panel-img`).classList.add('oculto')
+  $(`panel-text`).classList.remove('oculto')
+}
+
+//inicializador para paneles.
+const inicializarPaneles = () => {
+  $('panel-img-button').addEventListener('click', () => {
+    mostrarPanelImagen()
+    mostrarPanel()
+  })
+  $('panel-text-button').addEventListener('click', () => {
+    mostrarPanelTexto()
+    mostrarPanel()
+  })
+  $('panel-close-button').addEventListener('click', ocultarPanel)
+}
+
+
+
+//Este es el inicializador de evento para imagen
 const inicializarImagen = () => {
   $('url-img-input').addEventListener('input', actualizarImagen);
 
@@ -79,6 +112,8 @@ const inicializarImagen = () => {
 // Inicializar todos los eventos
 const inicializar = () => {
   inicializarImagen()
+  inicializarPaneles()
+
   $('download-meme-button').addEventListener('click', descargarMeme)
 }
 window.onload = inicializar
