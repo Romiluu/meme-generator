@@ -9,7 +9,7 @@ body.dark-theme {
     --color-panel: #252935; 
     --color-boton-default: #393e49;
     /* --color-boton-default-hover: #4e5565; */
-    --color-text: #ffffff;
+    --color-text: #7d2e69;
     /* --font-primary: 'Open Sans', sans-serif; */
     --border-radius: 3px;
 }
@@ -151,7 +151,7 @@ p {
 }
 /* FIN MAIN */
 
-/* COMIENDO ASIDE */
+/* COMIENZO ASIDE */
 .panel {
     width: 260px;
     height: 100%;
@@ -273,4 +273,36 @@ option {
     min-height: 1.2em;
     padding: 0px 2px 1px;
     white-space: nowrap;
+}
+/* FIN Panel de imagen, FONDO */
+/* Panel de imagen, FILTROS*/
+.panel-control-slider {
+    margin-top: 15px;
+}
+label {
+    display: block;
+    font-size: 12px;
+    color: var(--color-text);
+}
+input[type='range'] { /* aca le doy forma a las range, barras*/
+    width: 100%;
+    background-color: #5a5d68;
+    border-radius: 10px;
+    appearance: none;
+    height: 6px;
+    margin-top: 10px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--color-text);
+    cursor: pointer;
+  }
+#default-filters-button {
+    margin-top: 30px;
+}
+.button-default {
+    background-color: var(--color-boton-default);
 }
