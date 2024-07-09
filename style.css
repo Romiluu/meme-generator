@@ -325,3 +325,11 @@ input[type='range']::-webkit-slider-thumb {
 input[type='checkbox'] {
     margin: 0 5px 0 0;
 }
+/* FIN panel de texto, superior e inferior */
+
+/* PANEL DE TEXTO, fuente */
+#text-size-input {
+    width: calc(50% - 2.5px);
+    margin-right: 2.5px;
+}
+/* FIN panel de texto, fuente */

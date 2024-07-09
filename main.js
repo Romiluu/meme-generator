@@ -54,6 +54,27 @@ const reestrablecerFiltros = () => {
 
   actualizarFiltros()
 }
+
+//Este es el inicializador de evento para imagen
+const inicializarImagen = () => {
+  $('url-img-input').addEventListener('input', actualizarImagen);
+
+  $('blend-mode-color-input').addEventListener('input', actualizarColorMezcla) //Inicializa la actualización de color de mezcla
+  $('blend-mode-select').addEventListener('change', actualizarTipoMezcla) //Inicializa la actualización de tipo de mezcla
+
+  $('brightness-slider').addEventListener('change', actualizarFiltros) // aca arranca inicializacion para filtros
+  $('opacity-slider').addEventListener('change', actualizarFiltros)
+  $('blur-slider').addEventListener('change', actualizarFiltros)
+  $('contrast-slider').addEventListener('change', actualizarFiltros)
+  $('grayscale-slider').addEventListener('change', actualizarFiltros)
+  $('hue-slider').addEventListener('change', actualizarFiltros)
+  $('sepia-slider').addEventListener('change', actualizarFiltros)
+  $('saturate-slider').addEventListener('change', actualizarFiltros)
+  $('invert-slider').addEventListener('change', actualizarFiltros)
+
+  $('default-filters-button').addEventListener('click', reestrablecerFiltros) //inicializa la funcion que Reestablece los filtros.
+};
+
 //Funciones para los paneles.
 const ocultarPanel = () => {
   $('panel').classList.add('oculto')
@@ -87,32 +108,74 @@ const inicializarPaneles = () => {
 }
 
 
+//funcion para editar el texto
+const actualizarTextos = () => {
+  $('top-text').innerText = $('top-text-input').value
+  $('bottom-text').innerText = $('bottom-text-input').value
+}
 
-//Este es el inicializador de evento para imagen
-const inicializarImagen = () => {
-  $('url-img-input').addEventListener('input', actualizarImagen);
+//esta funcion es para sacar o mostrar paneles superior e inferior
+const alternarTextos = () => {
+  if ($('no-top-text-checkbox').checked) {
+    $('top-text').classList.add('oculto')
+  } else {
+    $('top-text').classList.remove('oculto')
+  }
 
-  $('blend-mode-color-input').addEventListener('input', actualizarColorMezcla) //Inicializa la actualización de color de mezcla
-  $('blend-mode-select').addEventListener('change', actualizarTipoMezcla) //Inicializa la actualización de tipo de mezcla
+  if ($('no-bottom-text-checkbox').checked) {
+    $('bottom-text').classList.add('oculto')
+  } else {
+    $('bottom-text').classList.remove('oculto')
+  }
+}
 
-  $('brightness-slider').addEventListener('change', actualizarFiltros) // aca arranca inicializacion para filtros
-  $('opacity-slider').addEventListener('change', actualizarFiltros)
-  $('blur-slider').addEventListener('change', actualizarFiltros)
-  $('contrast-slider').addEventListener('change', actualizarFiltros)
-  $('grayscale-slider').addEventListener('change', actualizarFiltros)
-  $('hue-slider').addEventListener('change', actualizarFiltros)
-  $('sepia-slider').addEventListener('change', actualizarFiltros)
-  $('saturate-slider').addEventListener('change', actualizarFiltros)
-  $('invert-slider').addEventListener('change', actualizarFiltros)
+//funcion para alinear texto
+const alinearTexto = (alineacion) => {
+  $('top-text').style.textAlign = alineacion
+  $('bottom-text').style.textAlign = alineacion
+}
 
-  $('default-filters-button').addEventListener('click', reestrablecerFiltros) //inicializa la funcion que Reestablece los filtros.
-};
+//funcion para ajustar tamanio de fuente
+const actualizarTamanioTexto = () => {
+  const tamanio = $('text-size-input').value
+  $('top-text').style.fontSize = `${tamanio}px`
+  $('bottom-text').style.fontSize = `${tamanio}px`
+}
+
+//funcion para cambiar la fuente
+const actualizarFuente = () => {
+  const fuente = $('text-font-select').value
+  $('top-text').style.fontFamily = fuente
+  $('bottom-text').style.fontFamily = fuente
+}
+
+//este es el inicializdor para texto
+const inicializarTexto = () => {
+  $('top-text-input').addEventListener('input', actualizarTextos) //inicializador para editar texto superior
+  $('bottom-text-input').addEventListener('input', actualizarTextos)
+
+  $('no-top-text-checkbox').addEventListener('change', alternarTextos) //inicializador para eliminar texto superior
+  $('no-bottom-text-checkbox').addEventListener('change', alternarTextos)
+
+  $('text-font-select').addEventListener('change', actualizarFuente)
+
+  $('text-size-input').addEventListener('input', actualizarTamanioTexto)
+  $('text-left-align-button').addEventListener('click', () =>
+    alinearTexto('left'))
+  $('text-center-align-button').addEventListener('click', () =>
+    alinearTexto('center'))
+  $('text-right-align-button').addEventListener('click', () =>
+    alinearTexto('right'))
+
+  window.addEventListener('resize', ajustarTexto)
+}
 
 
 // Inicializar todos los eventos
 const inicializar = () => {
   inicializarImagen()
   inicializarPaneles()
+  inicializarTexto()
 
   $('download-meme-button').addEventListener('click', descargarMeme)
 }

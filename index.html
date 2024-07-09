@@ -143,6 +143,36 @@
                             inferior</label>
                         </div>
                       </div>
+                       <!-- Panel de texto fuente-->
+                       <div class="panel-control">
+                        <h3 class="panel-control-title">FUENTE</h3>
+                        <!-- Familia de fuente-->
+                        <select name="Familia de fuente" id="text-font-select" class="panel-control-input" aria-label="Familia de fuente">
+                          <option value="Arial">Arial</option>
+                          <option value="Arial Black">Arial Black</option>
+                          <option value="American Typewriter">American Typewriter</option>
+                          <option value="Andale Mono">Andale Mono</option>
+                          <option value="Comic Sans MS">Comic Sans MS</option>
+                          <option value="Helvetica">Helvetica</option>
+                          <option value="Impact" selected>Impact</option>
+                          <option value="Verdana">Verdana</option>
+                          <option value="Times New Roman">Times New Roman</option>
+                        </select>
+                        <div class="flex-container">
+                          <!-- Tamaño -->
+                          <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="text-size-input" min="12"
+                            value="40" />
+                          <!-- Alineacion-->
+                          <div class="buttons-container buttons-alignment">
+                            <button class="button button-default" id="text-left-align-button"
+                              aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                            <button class="button button-default" id="text-center-align-button"
+                              aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                            <button class="button button-default" id="text-right-align-button"
+                              aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                          </div>
+                        </div>
+                      </div>
         </aside>
 
     </div>
