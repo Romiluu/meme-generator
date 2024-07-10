@@ -4,13 +4,13 @@
     box-sizing: border-box;
 }
 body.dark-theme {
-    --color-header: #201e30;
-    --color-background: #000b1a;
-    --color-panel: #201e30; 
-    --color-boton-default: #000b1a7c;
-    --color-button-download: #201e30;
+    --color-header: #242526;
+    --color-background: #18191A;
+    --color-panel: #242526; 
+    --color-boton-default: #18191A;
+    --color-button-download: #242526;
     /* --color-boton-default-hover: #4e5565; */
-    --color-text: #b2a59f;
+    --color-text: #cfbcb5;
     /* --font-primary: 'Open Sans', sans-serif; */
     --border-radius: 3px;
 }
