@@ -171,6 +171,24 @@ const actualizarFondoTexto = () => {
     $('bottom-text').style.backgroundColor = 'transparent'
   }
 }
+
+//esta funcion cambia el contorno del texto
+const actualizarContorno = (contorno) => {
+  const grosor = '2px';
+
+  if (contorno === 'ninguno') {
+    document.getElementById('top-text').style.textShadow = 'none';
+    document.getElementById('bottom-text').style.textShadow = 'none';
+  } else if (contorno === 'claro') {
+    document.getElementById('top-text').style.textShadow = `0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF`;
+    document.getElementById('bottom-text').style.textShadow = `0 0 4px #FFF, 0 0 2px #FFF, 0 0 1px #FFF, 0 0 4px #FFF`;
+  } else if (contorno === 'oscuro') {
+    document.getElementById('top-text').style.textShadow = `0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000`;
+    document.getElementById('bottom-text').style.textShadow = `0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000`;
+  }
+}
+
+
 //este es el inicializdor para texto
 const inicializarTexto = () => {
   $('top-text-input').addEventListener('input', actualizarTextos) //inicializador para editar texto superior
@@ -197,7 +215,17 @@ const inicializarTexto = () => {
     actualizarFondoTexto()
   })
 
-  window.addEventListener('resize', ajustarTexto)
+  $('no-outline-button').addEventListener('click', () => { //arranca inicializador para borde de letras
+    actualizarContorno('ninguno')
+  })
+  $('light-outline-button').addEventListener('click', () => {
+    actualizarContorno('claro')
+  })
+  $('dark-outline-button').addEventListener('click', () => {
+    actualizarContorno('oscuro')
+  })
+
+  
 }
 
 
