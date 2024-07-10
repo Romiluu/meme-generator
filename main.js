@@ -75,6 +75,7 @@ const inicializarImagen = () => {
   $('default-filters-button').addEventListener('click', reestrablecerFiltros) //inicializa la funcion que Reestablece los filtros.
 };
 
+// ----------------------------PANELES OCULATAR Y MOSTRAR------------------------
 //Funciones para los paneles.
 const ocultarPanel = () => {
   $('panel').classList.add('oculto')
@@ -107,7 +108,7 @@ const inicializarPaneles = () => {
   $('panel-close-button').addEventListener('click', ocultarPanel)
 }
 
-
+// ----------------------------ARRANCO PANEL DE TEXTO------------------------
 //funcion para editar el texto
 const actualizarTextos = () => {
   $('top-text').innerText = $('top-text-input').value
@@ -188,6 +189,19 @@ const actualizarContorno = (contorno) => {
   }
 }
 
+//ajusta espaciado
+const actualizarEspaciado = () => {
+  const paddingY = $('padding-input').value
+  $('top-text').style.padding = `${paddingY}px 50px`
+  $('bottom-text').style.padding = `${paddingY}px 50px`
+}
+
+//ajusta interlineado
+const actualizarInterlineado = () => {
+  const lineHeight = $('line-height-input').value
+  $('top-text').style.lineHeight = lineHeight
+  $('bottom-text').style.lineHeight = lineHeight
+}
 
 //este es el inicializdor para texto
 const inicializarTexto = () => {
@@ -225,6 +239,9 @@ const inicializarTexto = () => {
     actualizarContorno('oscuro')
   })
 
+  $('padding-input').addEventListener('input', actualizarEspaciado)
+
+  $('line-height-input').addEventListener('change', actualizarInterlineado)
   
 }
 
