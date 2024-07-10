@@ -4,24 +4,26 @@
     box-sizing: border-box;
 }
 body.dark-theme {
-    --color-header: #191e2b;
-    --color-background: #30343f;
-    --color-panel: #252935; 
-    --color-boton-default: #393e49;
+    --color-header: #201e30;
+    --color-background: #000b1a;
+    --color-panel: #201e30; 
+    --color-boton-default: #000b1a7c;
+    --color-button-download: #201e30;
     /* --color-boton-default-hover: #4e5565; */
-    --color-text: #7d2e69;
+    --color-text: #b2a59f;
     /* --font-primary: 'Open Sans', sans-serif; */
     --border-radius: 3px;
 }
 body.light-theme {
-    --color-header: #e0e0e0;
-    --color-background: #eeeeee;
+    --color-header: #8f8681;
+    --color-background: #e1dcd9;
     --color-panel: #fafafa;
     --color-boton-default: #e0e0e0;
     /* --color-boton-default-hover: #bdbdbd; */
-    --color-text: #424242;
-    --color-title-panel: rgb(33 33 33 / 80%);
-    --color-title-control: rgb(33 33 33 / 70%);
+    --color-text: #81534b;
+    --color-button-download: #81534b;
+    --color-title-panel: #32435f;
+    --color-title-control: #32435f;
     /* --font-primary: 'Open Sans', sans-serif; */
     --border-radius: 3px;
   }
@@ -146,7 +148,7 @@ p {
     margin-top: 30px;
     padding: 15px 15px;
     height: auto;
-    background-color: #7d2e69;
+    background-color: var(--color-button-download); /* Cambia en modo claro */
     color: white;
 }
 /* FIN MAIN */
@@ -176,7 +178,7 @@ p {
 }
 /* aca arranco con el panel de imagen */
 .panel-title {
-    /* color: var(--color-title-panel); este cambia en modo claro */
+    color: var(--color-title-panel);/*  este cambia en modo claro */
     margin-top: 0;
     margin-bottom: 20px;
     width: 100%;
@@ -187,7 +189,7 @@ p {
     margin-bottom: 20px;
 }
 .panel-control-title {
-    /* color: var(--color-title-control); este cambia en modo claro */
+    color: var(--color-title-control); /* este cambia en modo claro */
     margin-bottom: 8px;
     width: 100%;
     font-size: 12px;

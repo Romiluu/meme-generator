@@ -7,7 +7,31 @@ const descargarMeme = () => {
     saveAs(blob, 'mi-meme.png')
   })
 }
-// fin boton descarga 
+
+//-------------------------CAMBIAR TEMA ------------------------------------------------
+//cambiar tema claro/oscuro
+const alternarTema = () => {
+  const body = document.body;
+  const botonTema = $('theme-toggle-button');
+  const icono = botonTema.querySelector('i');
+  
+  if (body.classList.contains('dark-theme')) {
+    body.classList.remove('dark-theme');
+    body.classList.add('light-theme');
+    botonTema.innerHTML = '<i class="fa-solid fa-moon">Modo Oscuro</i>';
+  } else {
+    body.classList.remove('light-theme');
+    body.classList.add('dark-theme');
+    botonTema.innerHTML = '<i class="fa-regular fa-sun">Modo Claro</i>';
+  }
+}
+
+// Inicializador para cambiar tema
+const inicializarTemas = () => {
+  $('theme-toggle-button').addEventListener('click', alternarTema);
+}
+
+//------------------------- PANEL DE IMAGEN------------------------------------------------
 
 //Funcion para la url de imagen
 const actualizarImagen = (evento) => {
@@ -108,7 +132,7 @@ const inicializarPaneles = () => {
   $('panel-close-button').addEventListener('click', ocultarPanel)
 }
 
-// ----------------------------ARRANCO PANEL DE TEXTO------------------------
+// ----------------------------PANEL DE TEXTO------------------------
 //funcion para editar el texto
 const actualizarTextos = () => {
   $('top-text').innerText = $('top-text-input').value
@@ -246,8 +270,9 @@ const inicializarTexto = () => {
 }
 
 
-// Inicializar todos los eventos
+//------------------------------------ Inicializar todos los eventos----------------------------------
 const inicializar = () => {
+  inicializarTemas()
   inicializarImagen()
   inicializarPaneles()
   inicializarTexto()
