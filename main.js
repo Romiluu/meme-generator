@@ -149,6 +149,28 @@ const actualizarFuente = () => {
   $('bottom-text').style.fontFamily = fuente
 }
 
+//Funcion para cambiar el color de la letra
+const actualizarColorTexto = () => {
+  const color = $('text-color-input').value.toUpperCase()
+
+  $('text-color').innerText = color
+  $('top-text').style.color = color
+  $('bottom-text').style.color = color
+}
+
+//funcion para cambiar el color de fondo del texto dependiendo si el fondo es transparente o no.
+const actualizarFondoTexto = () => {
+  if (!$('text-no-background-checkbox').checked) {
+    const color = $('text-background-color-input').value
+
+    $('text-background-color').innerText = color.toUpperCase()
+    $('top-text').style.backgroundColor = color
+    $('bottom-text').style.backgroundColor = color
+  } else {
+    $('top-text').style.backgroundColor = 'transparent'
+    $('bottom-text').style.backgroundColor = 'transparent'
+  }
+}
 //este es el inicializdor para texto
 const inicializarTexto = () => {
   $('top-text-input').addEventListener('input', actualizarTextos) //inicializador para editar texto superior
@@ -166,6 +188,14 @@ const inicializarTexto = () => {
     alinearTexto('center'))
   $('text-right-align-button').addEventListener('click', () =>
     alinearTexto('right'))
+
+  $('text-color-input').addEventListener('input', actualizarColorTexto) // arranca inicializador que cambia color
+  $('text-background-color-input').addEventListener(
+    'input',
+    actualizarFondoTexto)
+  $('text-no-background-checkbox').addEventListener('change', () => {
+    actualizarFondoTexto()
+  })
 
   window.addEventListener('resize', ajustarTexto)
 }

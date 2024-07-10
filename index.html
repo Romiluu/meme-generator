@@ -41,8 +41,8 @@
             <button type="button" class="button button-text" id="download-meme-button"><i class="fas fa-download button-icon-text"
                 aria-hidden="true"></i>Descargar meme</button>
         </main>
-        <!-- FIN del main -->
-        
+        <!-- FIN DEL MAIN -->
+        <!-- COMIENZO DEL ASIDE  -->
         <aside class="panel oculto" id="panel">
             <!-- cerrar y abrir panel derecho -->
             <button class="panel-close-button" id="panel-close-button" aria-label="Cerrar panel">
@@ -119,12 +119,11 @@
                   </div>
                   <button class="button button-default" id="default-filters-button">Reestablecer filtros</button>
                 </section>
-                <!-- FIN PANEL DE IMAGEN y panel de filtros-->
+                <!-- FIN PANEL DE IMAGEN-->
 
                 <!-- PANEL DE TEXTO-->
                 <section class="panel-text oculto" id="panel-text">
                     <h2 class="panel-title">TEXTO</h2>
-
                     <!-- Panel de texto inferior y superior-->
                     <div class="panel-control">
                         <h3 class="panel-control-title">SUPERIOR</h3>
@@ -133,46 +132,72 @@
                           <input type="checkbox" id="no-top-text-checkbox"><label for="no-top-text-checkbox">Sin texto
                             superior</label>
                         </div>
+                    </div>
+                    <div class="panel-control">
+                      <h3 class="panel-control-title">INFERIOR</h3>
+                      <textarea aria-label="Texto Inferior" class="panel-control-input"
+                        id="bottom-text-input">BOTTOM TEXT</textarea>
+                      <div class="flex-container panel-control-checkbox">
+                        <input type="checkbox" id="no-bottom-text-checkbox"><label for="no-bottom-text-checkbox">Sin texto
+                          inferior</label>
                       </div>
-                      <div class="panel-control">
-                        <h3 class="panel-control-title">INFERIOR</h3>
-                        <textarea aria-label="Texto Inferior" class="panel-control-input"
-                          id="bottom-text-input">BOTTOM TEXT</textarea>
-                        <div class="flex-container panel-control-checkbox">
-                          <input type="checkbox" id="no-bottom-text-checkbox"><label for="no-bottom-text-checkbox">Sin texto
-                            inferior</label>
+                    </div>
+                    <!-- Panel de texto fuente-->
+                    <div class="panel-control">
+                      <h3 class="panel-control-title">FUENTE</h3>
+                      <!-- Familia de fuente-->
+                      <select name="Familia de fuente" id="text-font-select" class="panel-control-input" aria-label="Familia de fuente">
+                        <option value="Arial">Arial</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="American Typewriter">American Typewriter</option>
+                        <option value="Andale Mono">Andale Mono</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact" selected>Impact</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                      </select>
+                      <div class="flex-container">
+                        <!-- Tamaño -->
+                        <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="text-size-input" min="12"
+                          value="40" />
+                        <!-- Alineacion-->
+                        <div class="buttons-container buttons-alignment">
+                          <button class="button button-default" id="text-left-align-button"
+                            aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+                          <button class="button button-default" id="text-center-align-button"
+                            aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
+                          <button class="button button-default" id="text-right-align-button"
+                            aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
                         </div>
                       </div>
-                       <!-- Panel de texto fuente-->
-                       <div class="panel-control">
-                        <h3 class="panel-control-title">FUENTE</h3>
-                        <!-- Familia de fuente-->
-                        <select name="Familia de fuente" id="text-font-select" class="panel-control-input" aria-label="Familia de fuente">
-                          <option value="Arial">Arial</option>
-                          <option value="Arial Black">Arial Black</option>
-                          <option value="American Typewriter">American Typewriter</option>
-                          <option value="Andale Mono">Andale Mono</option>
-                          <option value="Comic Sans MS">Comic Sans MS</option>
-                          <option value="Helvetica">Helvetica</option>
-                          <option value="Impact" selected>Impact</option>
-                          <option value="Verdana">Verdana</option>
-                          <option value="Times New Roman">Times New Roman</option>
-                        </select>
-                        <div class="flex-container">
-                          <!-- Tamaño -->
-                          <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="text-size-input" min="12"
-                            value="40" />
-                          <!-- Alineacion-->
-                          <div class="buttons-container buttons-alignment">
-                            <button class="button button-default" id="text-left-align-button"
-                              aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
-                            <button class="button button-default" id="text-center-align-button"
-                              aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
-                            <button class="button button-default" id="text-right-align-button"
-                              aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+                    </div>
+                    <!--Panel de texto  COLOR-->
+                    <div class="panel-control">
+                      <div class="panel-control-columns">
+                        <!-- Color de texto -->
+                        <div class="panel-control panel-control-column">
+                          <h3 class="panel-control-title">COLOR</h3>
+                          <div class="panel-control-color">
+                            <input name="Color de texto" type="color" id="text-color-input" value="#000000" aria-label="Color de texto" />
+                            <span id="text-color" aria-hidden="true">#000000</span>
+                          </div>
+                        </div>
+                        <!-- Color de fondo-->
+                        <div class="panel-control panel-control-column">
+                          <h3 class="panel-control-title">FONDO</h3>
+                          <div class="panel-control-color">
+                            <input name="Color de fondo de texto" type="color" id="text-background-color-input" value="#FFFFFF" aria-label="Color de fondo de texto" />
+                            <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
                           </div>
                         </div>
                       </div>
+                      <div class="flex-container panel-control-checkbox">
+                        <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
+                          transparente</label>
+                      </div>
+                    </div>
+                       
         </aside>
 
     </div>
