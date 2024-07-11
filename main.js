@@ -197,6 +197,16 @@ const actualizarFondoTexto = () => {
   }
 }
 
+const actualizarPosicionTexto = () => {
+  if ($('text-no-background-checkbox').checked) {
+    $('top-text').style.position = 'absolute'
+    $('bottom-text').style.position = 'absolute'
+  } else {
+    $('top-text').style.position = 'static'
+    $('bottom-text').style.position = 'static'
+  }
+}
+
 //esta funcion cambia el contorno del texto
 const actualizarContorno = (contorno) => {
   const grosor = '2px';
@@ -251,6 +261,7 @@ const inicializarTexto = () => {
     actualizarFondoTexto)
   $('text-no-background-checkbox').addEventListener('change', () => {
     actualizarFondoTexto()
+    actualizarPosicionTexto()
   })
 
   $('no-outline-button').addEventListener('click', () => { //arranca inicializador para borde de letras
