@@ -78,7 +78,12 @@ const reestrablecerFiltros = () => {
 
   actualizarFiltros()
 }
-
+//funcion para ajustar imagen responsive
+const ajustarImagen = () => {
+  $('canvas-meme').style.height = `${
+    $('canvas-meme').getBoundingClientRect().width
+  }px`
+}
 //Este es el inicializador de evento para imagen
 const inicializarImagen = () => {
   $('url-img-input').addEventListener('input', actualizarImagen);
@@ -97,6 +102,8 @@ const inicializarImagen = () => {
   $('invert-slider').addEventListener('change', actualizarFiltros)
 
   $('default-filters-button').addEventListener('click', reestrablecerFiltros) //inicializa la funcion que Reestablece los filtros.
+  
+  window.addEventListener('resize', ajustarImagen)
 };
 
 // ----------------------------PANELES OCULATAR Y MOSTRAR------------------------
@@ -236,7 +243,21 @@ const actualizarInterlineado = () => {
   $('top-text').style.lineHeight = lineHeight
   $('bottom-text').style.lineHeight = lineHeight
 }
+//ajusta para diferentes pantallas
+const ajustarTexto = () => {
+  if (window.innerWidth > 1100) {
+    return
+  }
 
+  const tamanioTexto = Math.round((window.innerWidth / 10) * 0.5)
+  const padding = Math.round((window.innerWidth / 10) * 0.2)
+
+  $('text-size-input').value = tamanioTexto
+  $('padding-input').value = padding
+
+  actualizarEspaciado()
+  actualizarTamanioTexto()
+}
 //este es el inicializdor para texto
 const inicializarTexto = () => {
   $('top-text-input').addEventListener('input', actualizarTextos) //inicializador para editar texto superior
@@ -277,16 +298,28 @@ const inicializarTexto = () => {
   $('padding-input').addEventListener('input', actualizarEspaciado)
 
   $('line-height-input').addEventListener('change', actualizarInterlineado)
+
+  window.addEventListener('resize', ajustarTexto)
   
 }
 
-
 //------------------------------------ Inicializar todos los eventos----------------------------------
+
+const inicializarValores = () => {
+  ajustarImagen()
+  actualizarFuente()
+  actualizarColorTexto()
+  actualizarFondoTexto()
+  actualizarPosicionTexto()
+  ajustarTexto()
+}
+
 const inicializar = () => {
   inicializarTemas()
   inicializarImagen()
   inicializarPaneles()
   inicializarTexto()
+  inicializarValores()
 
   $('download-meme-button').addEventListener('click', descargarMeme)
 }

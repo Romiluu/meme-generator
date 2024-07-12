@@ -19,7 +19,7 @@ body.light-theme {
     --color-background: #e1dcd9;
     --color-panel: #fafafa;
     --color-boton-default: #d1c8c8;
-    --color-boton-default-hover: #e1dcd957;
+    --color-boton-default-hover: #9b5f5538;;
     --color-text: #81534b;
     --color-button-download: #81534b;
     --color-title-panel: #32435f;
@@ -224,7 +224,6 @@ h2,h3 {
     height: 36px;
     background-color: var(--color-boton-default);
     border-radius: var(--border-radius);
-    transition: background-color 0.2s;
     padding: 5px 10px;
     margin-bottom: 5px;
 }
@@ -345,3 +344,43 @@ input[type='checkbox'] {
 /* FIN panel de texto, fuente */
 
 /* -----------------RESPONSIVE----------------------- */
+@media (max-width: 768px) {
+    .panel {
+        width: 100%;
+        max-height: 50vh;
+    }
+
+    .buttons-container.panel-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .button {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+}
+@media (max-width: 700px) {
+    .app-title {
+      font-size: 26px;
+    }
+    .panel {
+      width: 100%;
+    }
+  }
+@media (max-width: 1024px) and (min-height: 600px) {
+    .panel {
+        width: 80%;
+        max-height: 50vh;
+    }
+
+    .buttons-container.panel-buttons {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+}
