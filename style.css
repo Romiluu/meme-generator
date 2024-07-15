@@ -139,9 +139,10 @@ input, button, select, textarea {
 #image-meme {
     width: 100%;
     flex-grow: 1;
-    background-size: cover;
+    background-size: cover; 
+    background-position: center; 
 }
-#bottom-text {
+#bottom-text {  
     bottom: 0;
 }
 .text-meme {

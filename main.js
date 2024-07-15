@@ -18,11 +18,11 @@ const alternarTema = () => {
   if (body.classList.contains('dark-theme')) {
     body.classList.remove('dark-theme');
     body.classList.add('light-theme');
-    botonTema.innerHTML = '<i class="fa-solid fa-moon">Modo Oscuro</i>';
+    botonTema.innerHTML = '<i class="fa-solid fa-moon"> Modo Oscuro</i>';
   } else {
     body.classList.remove('light-theme');
     body.classList.add('dark-theme');
-    botonTema.innerHTML = '<i class="fa-regular fa-sun">Modo Claro</i>';
+    botonTema.innerHTML = '<i class="fa-regular fa-sun"> Modo Claro</i>';
   }
 }
 
@@ -243,7 +243,7 @@ const actualizarInterlineado = () => {
   $('top-text').style.lineHeight = lineHeight
   $('bottom-text').style.lineHeight = lineHeight
 }
-//ajusta para diferentes pantallas
+
 const ajustarTexto = () => {
   if (window.innerWidth > 1100) {
     return
