@@ -38,7 +38,8 @@ Este proyecto es un editor de memes que permite a los usuarios crear y personali
 
 ------------
 ###### Contacto
-LinkedIn: Romina Luna  
+LinkedIn:  [Romina Luna](http://www.linkedin.com/in/romina-luna04/ "Heading link")
+
 Correo Electrónico: Romiluna04@gmail.com
 
 
